@@ -23,7 +23,7 @@ import (
 )
 
 /*
-#cgo pkg-config: ruby-2.3
+#cgo pkg-config: ruby-?.?
 
 #include <ruby.h>
 
