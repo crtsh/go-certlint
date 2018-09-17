@@ -1,5 +1,5 @@
 # go-certlint
-Go wrapper for [https://github.com/awslabs/certlint](awslabs/certlint)
+Go wrapper for [awslabs/certlint](https://github.com/awslabs/certlint)
 
 # INSTALL
 ```
@@ -9,4 +9,4 @@ sed -i "s/ruby-?.?/ruby-X.Y/g" go-certlint.go
 make
 go install
 ```
-...where X.Y is your Ruby version (e.g., 2.3).
+Change `ruby-X.Y` to your Ruby version (e.g., `ruby-2.3`).
