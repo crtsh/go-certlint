@@ -46,14 +46,13 @@ VALUE rescue_require(VALUE data, VALUE err)
 	return Qnil;
 }
 
-void init_certlint(void)
+void init_certlint(char* lib_dir, char* ext_dir)
 {
 	ruby_init();
 	ruby_script("go-certlint");
 	ruby_init_loadpath();
-	ruby_incpush("/usr/local");
-	ruby_incpush("/usr/local/certlint/lib");
-	ruby_incpush("/usr/local/certlint/ext");
+	ruby_incpush(lib_dir);
+	ruby_incpush(ext_dir);
 	rb_require("enc/encdb");
 	rb_require("enc/trans/transdb");
 	rb_require("certlint");
@@ -74,8 +73,8 @@ char* lint(char* linter, unsigned char* cert_buffer, size_t cert_len)
 */
 import "C"
 
-func Init() {
-	C.init_certlint()
+func Init(base_dir string) {
+	C.init_certlint(C.CString(base_dir + "/lib"), C.CString(base_dir + "/ext"))
 }
 
 func Cablint(cert_der []byte) string {
