@@ -1,6 +1,6 @@
 /* go-certlint - Go wrapper for github.com/awslabs/certlint
  * Written by Rob Stradling
- * Copyright (C) 2018 COMODO CA Limited
+ * Copyright (C) 2018-2020 Sectigo Limited
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
